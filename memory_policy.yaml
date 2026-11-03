@@ -1,0 +1,18 @@
+version: 1
+retention:
+  t0_max_age_days: 7
+  t0_max_bytes: 524288000
+  t1_max_candidates: 100
+  t2_max_rules: 200
+  t2_max_export_bytes: 51200
+eviction:
+  t0: oldest_first
+  t1: lowest_score_then_oldest
+  t2: lowest_reuse_then_oldest
+deduplication:
+  algorithm: sha256_normalized_rule
+  merge_similar_candidates: true
+benchmark:
+  memory_path: /memory/MEMORY.md
+  manifest_path: /memory/manifest.json
+  retain_raw_trajectories: false
